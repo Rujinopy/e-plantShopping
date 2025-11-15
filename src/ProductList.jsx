@@ -278,7 +278,6 @@ function ProductList({ onHomeClick }) {
   };
 
   const handleAddToCart = (product) => {
-    console.log("Adding to cart:", product);
     dispatch(addItem(product)); // Dispatch the action to add the product to the cart (Redux action)
     setAddedToCart((prevState) => ({
       // Update the local state to reflect that the product has been added
@@ -286,10 +285,6 @@ function ProductList({ onHomeClick }) {
       [product.name]: true, // Set the current product's name as a key with value 'true' to mark it as added
     }));
   };
-
-  useEffect(() => {
-    console.log("Added to cart state:", addedToCart);
-    }, [addedToCart]);
     
   const handleHomeClick = (e) => {
     e.preventDefault();
